@@ -160,7 +160,6 @@ Student Login
 - **Dockerfile:** openjdk base → copy jar → expose 8080 → entrypoint java -jar
 - **Docker Compose:** backend + postgres service → ports 8080:8080, 5432:5432
 - **Health check:** `/api/public/health`
-- Optional: Minikube / K8s deployment
 - Swagger UI → API documentation `/swagger-ui.html`
 
 ---
