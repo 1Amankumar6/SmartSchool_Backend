@@ -9,8 +9,6 @@
 - Swagger/OpenAPI for API documentation
 - Docker + PostgreSQL setup
 - Pagination & sorting for large datasets
-- Ready for deployment / DevOps showcase
-
 
 ## 2️⃣ Architecture Diagram (Whiteboard Ready)
 
