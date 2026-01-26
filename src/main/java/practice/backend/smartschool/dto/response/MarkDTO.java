@@ -5,10 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class SignUpResponse {
-
-    private Long id;
-    private String username;
-    private String email;
-    private String role;
+public class MarkDTO {
+    private String Subject;
+    private Integer score;
 }

@@ -5,10 +5,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import practice.backend.smartschool.dto.request.LoginRequest;
-import practice.backend.smartschool.dto.request.SignUpRequest;
-import practice.backend.smartschool.dto.response.JwtAuthenticationResponse;
-import practice.backend.smartschool.dto.response.SignUpResponse;
+import practice.backend.smartschool.dto.request.LoginRequestDTO;
+import practice.backend.smartschool.dto.request.SignUpRequestDTO;
+import practice.backend.smartschool.dto.response.JwtAuthenticationResponseDTO;
+import practice.backend.smartschool.dto.response.SignUpResponseDTO;
+import practice.backend.smartschool.dto.response.StatusDTO;
 import practice.backend.smartschool.service.UserService;
 
 @RestController
@@ -19,14 +20,14 @@ public class AuthController {
     private final UserService userService;
 
     @PostMapping("/public/login")
-    public ResponseEntity<JwtAuthenticationResponse> login(
-            @RequestBody LoginRequest request) {
+    public ResponseEntity<JwtAuthenticationResponseDTO> login(
+            @RequestBody LoginRequestDTO request) {
 
         return ResponseEntity.ok(userService.login(request));
     }
 
     @PostMapping("/public/signup")
-    public ResponseEntity<SignUpResponse> signUp(@RequestBody SignUpRequest request){
+    public ResponseEntity<SignUpResponseDTO> signUp(@RequestBody SignUpRequestDTO request){
         return ResponseEntity.ok(userService.signup(request));
     }
 
@@ -52,5 +53,9 @@ public class AuthController {
         return authHeader.substring(7).trim();
     }
 
+    @PostMapping("/logout")
+    public ResponseEntity<?> logout(){
+        return ResponseEntity.ok(userService.logout());
+    }
 
 }

@@ -58,14 +58,14 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
                                 "/api/auth/**",           // login/signup endpoints
-                                "/health",
+                                "/api/public/**",
                                 "/swagger-ui.html",
                                 "/swagger-ui/**",
                                 "/v3/api-docs/**"
                         ).permitAll()
                         .requestMatchers("/admin/**").hasRole("PRINCIPAL")
                         .requestMatchers("/teacher/**").hasAnyRole("TEACHER", "PRINCIPAL")
-                        .requestMatchers("/student/**").hasRole("STUDENT")
+                        .requestMatchers("/api/student/**").hasRole("STUDENT")
                         .anyRequest().authenticated()
                 )
 

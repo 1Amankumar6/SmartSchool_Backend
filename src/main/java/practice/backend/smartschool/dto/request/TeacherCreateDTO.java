@@ -3,7 +3,8 @@ package practice.backend.smartschool.dto.request;
 import lombok.Data;
 
 @Data
-public class LoginRequest {
-    private String username;
+public class TeacherCreateDTO {
+    private String name;
+    private String email;
     private String password;
 }

@@ -2,11 +2,10 @@ package practice.backend.smartschool.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-public class JwtAuthenticationResponse {
-    private String username;
-    private String token;
-    private String tokenType;
+public class StatusDTO {
+    private String message;
 }
